@@ -1,0 +1,8 @@
+<aura:component implements="force:appHostable">
+    <!--It doesn't work with Lightning Out-->
+    <!--<lightning:notificationsLibrary aura:id="notifLib"/>-->
+    <!-- / It doesn't work with Lightning Out-->
+    
+    <c:SLDSToast_lcp aura:id="toast"/>
+    <lightning:button name="Show Toast" label="Show Toast" onclick="{!c.onclickSLDSToast}"/>
+</aura:component>	

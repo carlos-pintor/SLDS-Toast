@@ -1,0 +1,38 @@
+<aura:component>
+    
+    <aura:attribute name="type" type="String" default="info" />
+    <aura:attribute name="title" type="String" default="" />
+    <aura:attribute name="message" type="String" default="" />
+    <aura:attribute name="autoClose" type="Boolean" default="true" />    
+    <aura:attribute name="autoCloseTime" type="Integer" default="5000" />   
+
+    <aura:attribute name="showThis" type="Boolean" default="false" />    
+
+    <aura:method name="show" action="{!c.onshow}" description="Receive the params to display title and message, and shows the toast"> 
+        <aura:attribute name="type" type="String" default="info" />
+        <aura:attribute name="title" type="String" default=""/> 
+        <aura:attribute name="message" type="String" default=""/> 
+        <aura:attribute name="autoClose" type="Boolean" default="true" />   
+        <aura:attribute name="autoCloseTime" type="Integer" default="5000" />   
+    </aura:method>
+
+    <aura:if isTrue="{!v.showThis}">
+        <div class="demo-only" >
+            <div class="slds-notify_container slds-is-relative">
+                <div class="{! 'slds-notify slds-notify_toast slds-theme_' + v.type }" role="status">
+                    <span class="slds-icon_container slds-m-right_small slds-no-flex slds-align-top">
+                        <lightning:icon size="small" iconName="{! 'utility:' + v.type}" variant="inverse" alternativeText="{!v.type}" title="{!v.type}" />
+                    </span>
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small">{!v.title}</h2>
+                        <p>{!v.message}</p>
+                    </div>
+                    <div class="slds-notify__close">
+                        <lightning:buttonIcon iconName="utility:close" size="large"  variant="bare-inverse" title="Close" alternativeText="Close" onclick="{!c.onclickClose}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+    
+</aura:component>	

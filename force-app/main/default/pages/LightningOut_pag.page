@@ -1,0 +1,18 @@
+<apex:page>
+    <apex:includeLightning />
+
+    <div id="lightning" />
+
+    <script>
+        $Lightning.use("c:LightningOut_app", function() {
+          $Lightning.createComponent("c:UseToast_lcp",
+              {},
+              "lightning",
+              function(cmp) {
+                console.log("UseToast_lcp was created");
+                // do some stuff
+              }
+          );
+        });
+    </script>
+</apex:page>
