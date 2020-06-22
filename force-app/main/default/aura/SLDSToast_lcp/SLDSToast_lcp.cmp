@@ -18,7 +18,7 @@
 
     <aura:if isTrue="{!v.showThis}">
         <div class="demo-only" >
-            <div class="slds-notify_container slds-is-relative">
+            <div class="slds-notify_container slds-is-absolute">
                 <div class="{! 'slds-notify slds-notify_toast slds-theme_' + v.type }" role="status">
                     <span class="slds-icon_container slds-m-right_small slds-no-flex slds-align-top">
                         <lightning:icon size="small" iconName="{! 'utility:' + v.type}" variant="inverse" alternativeText="{!v.type}" title="{!v.type}" />
